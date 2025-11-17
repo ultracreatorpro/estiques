@@ -3,220 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Stickers Gratis para WhatsApp | Únete a Nuestro Canal</title>
-    <meta name="description" content="+5000 Stickers Diarios para WhatsApp. Únete a nuestro canal oficial y recibe los mejores packs GRATIS todos los días.">
+    <title>Stickers para WhatsApp | Packs Gratis Diarios</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    <meta name="description" content="Únete a nuestro canal de WhatsApp y recibe los mejores stickers gratis todos los días. Packs exclusivos de emojis, memes, amor y animales.">
+    <meta name="keywords" content="whatsapp stickers, stickers para whatsapp, canal whatsapp stickers, packs gratis stickers, stickers diarios">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.5;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* Hero Banner */
-        .hero-banner {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 40px;
+
+        /* Header Styles - Más profesional */
+        .header {
             text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
-        .hero-banner h1 {
-            font-size: 3rem;
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #718096;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .hero-banner p {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .whatsapp-btn {
+
+        .cta-button {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
-            padding: 20px 40px;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
-        
-        /* Sticker Preview */
-        .sticker-preview {
+
+        /* Sticker Packs Grid - Más elegante */
+        .sticker-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
-        
-        .sticker-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
+
+        .sticker-pack {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        
-        .sticker-card:hover {
-            transform: translateY(-10px);
+
+        .sticker-pack:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
-        
-        .sticker-card img {
+
+        .sticker-preview {
             width: 120px;
             height: 120px;
-            border-radius: 15px;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .sticker-pack h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .pack-author {
+            color: #718096;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .pack-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 12px 0;
+            padding: 12px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat i {
+            color: #667eea;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
         .see-more-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
             cursor: pointer;
-            margin-top: 20px;
+            width: 100%;
             transition: all 0.3s ease;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        
+
         .see-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Advertisement Banner - Más discreto */
+        .ad-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 10px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.25);
+            color: white;
+            grid-column: 1 / -1;
+            margin: 20px 0;
+        }
+
+        .ad-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .ad-content {
+            flex: 1;
+        }
+
+        .ad-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ad-description {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .ad-button {
+            background: white;
+            color: #ee5a24;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+
+        .ad-button:hover {
             transform: scale(1.05);
         }
-        
-        /* Benefits Section */
-        .benefits {
-            background: rgba(255, 255, 255, 0.95);
+
+        /* Categories - Más compacto */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            padding: 10px 18px;
             border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
             text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
-        .benefits h2 {
-            margin-bottom: 30px;
-            color: #333;
+
+        .footer p {
+            color: #718096;
+            font-size: 0.9rem;
         }
-        
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .benefit-item {
-            text-align: center;
-        }
-        
-        .benefit-item i {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 15px;
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .sticker-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .ad-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .categories {
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
         }
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Hero Banner -->
-        <div class="hero-banner">
-            <h1>🎉 +5000 Stickers GRATIS para WhatsApp</h1>
-            <p>Únete a nuestro canal oficial y recibe packs exclusivos todos los días</p>
-            <a href="https://whatsapp.com/channel/0029VaTuCanal" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Únete al Canal de Stickers
-            </a>
-            <p style="margin-top: 15px; font-size: 1rem; color: #888;">+50,000 personas ya disfrutan de nuestros stickers</p>
-        </div>
-        
-        <!-- Sticker Preview -->
-        <div class="sticker-preview">
-            <div class="sticker-card">
-                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop" alt="Emojis Animados">
-                <h3>Emojis Animados</h3>
-                <p>+150 emojis en movimiento</p>
-            </div>
-            <div class="sticker-card">
-                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=300&h=300&fit=crop" alt="Animales Divertidos">
-                <h3>Animales Divertidos</h3>
-                <p>Los animales más graciosos</p>
-            </div>
-            <div class="sticker-card">
-                <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=300&h=300&fit=crop" alt="Memes Virales">
-                <h3>Memes Virales</h3>
-                <p>Los memes del momento</p>
-            </div>
-        </div>
-        
-        <!-- Call to Action -->
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="https://whatsapp.com/channel/0029VaTuCanal" class="see-more-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Ver +5000 Stickers en Nuestro Canal
+        <!-- Header con llamada a la acción -->
+        <div class="header">
+            <h1>Únete a Nuestro Canal de WhatsApp</h1>
+            <p>Recibe los mejores stickers gratis directamente en tu WhatsApp. Nuevos packs todos los días con emojis, memes y mucho más.</p>
+            <a href="https://whatsapp.com/channel/0029VaTuCanal" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Unirse al Canal
             </a>
         </div>
-        
-        <!-- Benefits -->
-        <div class="benefits">
-            <h2>🌟 ¿Por Qué Unirte a Nuestro Canal?</h2>
-            <div class="benefit-grid">
-                <div class="benefit-item">
-                    <i class="fas fa-gift"></i>
-                    <h3>Stickers Gratis</h3>
-                    <p>Packs exclusivos todos los días</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Contenido Nuevo</h3>
-                    <p>+50 stickers diarios</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-star"></i>
-                    <h3>Calidad Premium</h3>
-                    <p>Stickers en alta calidad</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Fácil de Usar</h3>
-                    <p>Agrega con un solo clic</p>
-                </div>
-            </div>
+
+        <!-- Sticker Packs Grid -->
+        <div class="sticker-grid" id="stickerGrid">
+            <!-- Los paquetes se cargarán aquí dinámicamente -->
         </div>
-        
-        <!-- Final CTA -->
-        <div class="hero-banner" style="margin-top: 50px;">
-            <h2>🚀 ¿Qué Esperas?</h2>
-            <p>Únete a +50,000 personas que ya disfrutan de los mejores stickers para WhatsApp</p>
-            <a href="https://whatsapp.com/channel/0029VaTuCanal" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Unirme al Canal Ahora
-            </a>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Stickers para WhatsApp - Todos los derechos reservados</p>
+            <p>stickersparawhatsapp.online</p>
         </div>
     </div>
+
+    <script>
+        // TUS PACKS - MODIFICA ESTOS DATOS
+        const stickerPacks = [
+            {
+                id: 1,
+                name: "Emojis Animados Premium",
+                author: "StickersParaWhatsApp",
+                category: "emojis",
+                preview: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop",
+                whatsappChannel: "https://whatsapp.com/channel/0029VaTuCanal",
+                fileSize: "2.1 MB",
+                stickers: "30",
+                trending: true
+            },
+            {
+                id: 2,
+                name: "Animales Divertidos",
+                author: "StickersParaWhatsApp",
+                category: "animales",
+                preview: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=300&h=300&fit=crop",
+                whatsappChannel: "https://whatsapp.com/channel/0029VaTuCanal",
+                fileSize: "1.8 MB",
+                stickers: "25",
+                trending: true
+            },
+            {
+                id: 3,
+                name: "Memes Virales 2024",
+                author: "StickersParaWhatsApp",
+                category: "memes",
+                preview: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=300&h=300&fit=crop",
+                whatsappChannel: "https://whatsapp.com/channel/0029VaTuCanal",
+                fileSize: "2.3 MB",
+                stickers: "28",
+                trending: true
+            },
+            {
+                id: 4,
+                name: "Stickers de Amor",
+                author: "StickersParaWhatsApp",
+                category: "amor",
+                preview: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300&h=300&fit=crop",
+                whatsappChannel: "https://whatsapp.com/channel/0029VaTuCanal",
+                fileSize: "1.5 MB",
+                stickers: "20"
+            }
+        ];
+
+        // Configuración de la publicidad - MODIFICA ESTO
+        const adConfig = {
+            image: "https://via.placeholder.com/60x60/ffffff/ff6b6b?text=AD",
+            title: "Oferta Especial",
+            description: "Descubre nuestra promoción por tiempo limitado",
+            buttonText: "Ver Más",
+            link: "https://tupagina.com"
+        };
+
+        // Función para redirigir al canal de WhatsApp
+        function redirectToWhatsAppChannel(channelUrl) {
+            window.open(channelUrl, '_blank');
+        }
+
+        // Función para mostrar los paquetes CON PUBLICIDAD
+        function displayStickerPacks(packs = stickerPacks) {
+            const container = document.getElementById('stickerGrid');
+            container.innerHTML = '';
+
+            // Mostrar todos los packs
+            packs.forEach((pack, index) => {
+                const packElement = `
+                    <div class="sticker-pack" data-category="${pack.category}">
+                        <img src="${pack.preview}" alt="${pack.name}" class="sticker-preview">
+                        <h3>${pack.name}</h3>
+                        <p class="pack-author">Por: ${pack.author}</p>
+                        <div class="pack-stats">
+                            <div class="stat">
+                                <i class="fas fa-images"></i>
+                                <div>${pack.stickers} stickers</div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-download"></i>
+                                <div>${pack.fileSize}</div>
+                            </div>
+                        </div>
+                        <button class="see-more-btn" onclick="redirectToWhatsAppChannel('${pack.whatsappChannel}')">
+                            <i class="fab fa-whatsapp"></i>
+                            Ver Más Stickers
+                        </button>
+                    </div>
+                `;
+                container.innerHTML += packElement;
+
+                // Insertar publicidad después del segundo pack
+                if (index === 1) {
+                    const adElement = `
+                        <div class="ad-banner">
+                            <img src="${adConfig.image}" alt="Publicidad" class="ad-image">
+                            <div class="ad-content">
+                                <div class="ad-title">${adConfig.title}</div>
+                                <div class="ad-description">${adConfig.description}</div>
+                            </div>
+                            <a href="${adConfig.link}" target="_blank" class="ad-button">
+                                ${adConfig.buttonText}
+                            </a>
+                        </div>
+                    `;
+                    container.innerHTML += adElement;
+                }
+            });
+        }
+
+        // Mostrar los paquetes cuando cargue la página
+        displayStickerPacks();
+    </script>
 </body>
 </html>
