@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickers para WhatsApp - Los Mejores Packs Gratis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #faee14 0%, #faee14 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 25px;
+        }
+
+        /* Video Tutorial Section */
+        .video-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .video-section h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Search Bar */
+        .search-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 60px 18px 25px;
+            font-size: 1.1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        /* Advertisement Banner */
+        .ad-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            color: white;
+            grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
+            margin: 20px 0;
+        }
+
+        .ad-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .ad-content {
+            flex: 1;
+        }
+
+        .ad-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .ad-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .ad-button {
+            background: white;
+            color: #ee5a24;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .ad-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Sticker Packs Grid */
+        .sticker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .sticker-pack {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sticker-pack:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pack-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .pack-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .sticker-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            margin: 15px auto;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticker-pack h3 {
+            font-size: 1.4rem;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .pack-author {
+            color: #718096;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .pack-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+            padding: 15px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat i {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #718096;
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .video-container iframe {
+                height: 300px;
+            }
+            
+            .sticker-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ad-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .ad-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-sticky-note"></i>
+            </div>
+            <h1>Stickers para WhatsApp</h1>
+            <p>Descubre los mejores packs de stickers y agrégalos directamente a tu WhatsApp</p>
+        </div>
+
+        <!-- Video Tutorial -->
+        <div class="video-section">
+            <h2><i class="fas fa-play-circle"></i> ¿Cómo Agregar Stickers?</h2>
+            <div class="video-container">
+                <!-- REEMPLAZA ESTE ENLACE CON TU VIDEO DE YOUTUBE -->
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                        title="Tutorial: Cómo agregar stickers a WhatsApp" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="🔍 Buscar packs de stickers..." id="searchInput">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="humor">Humor</button>
+            <button class="category-btn" data-category="amor">Amor</button>
+            <button class="category-btn" data-category="animales">Animales</button>
+            <button class="category-btn" data-category="memes">Memes</button>
+            <button class="category-btn" data-category="anime">Anime</button>
+        </div>
+
+        <!-- Sticker Packs Grid CON PUBLICIDAD INTEGRADA -->
+        <div class="sticker-grid" id="stickerGrid">
+            <!-- Los paquetes Y la publicidad se cargarán aquí dinámicamente -->
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Stickers para WhatsApp - Todos los derechos reservados</p>
+            <p>stickersparawhatsapp.online</p>
+        </div>
+    </div>
+
+    <script>
+        // TUS PACKS REALES - MODIFICA ESTOS DATOS
+        const stickerPacks = [
+            {
+                id: 1,
+                name: "Pack de Emojis Animados",
+                author: "StickersParaWhatsApp",
+                category: "emojis",
+                preview: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop",
+                downloadLink: "packs/STK_PK-20250927-WA0026.zip",
+                fileSize: "0.94 MB",
+                stickers: "30",
+                trending: true
+            },
+            {
+                id: 2,
+                name: "Stickers Divertidos",
+                author: "StickersParaWhatsApp",
+                category: "humor",
+                preview: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=300&h=300&fit=crop",
+                downloadLink: "packs/STK_PK-20251002-WA0006.zip",
+                fileSize: "534 KB",
+                stickers: "15",
+                trending: true
+            },
+            {
+                id: 3,
+                name: "Pack de Animales",
+                author: "StickersParaWhatsApp",
+                category: "animales",
+                preview: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300&h=300&fit=crop",
+                downloadLink: "packs/STK_PK-20251003-WA0003.zip",
+                fileSize: "0.94 MB",
+                stickers: "25",
+                trending: true
+            },
+            {
+                id: 4,
+                name: "Memes Graciosos",
+                author: "StickersParaWhatsApp",
+                category: "memes",
+                preview: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=300&h=300&fit=crop",
+                downloadLink: "packs/STK_PK-20251007-WA0023.zip",
+                fileSize: "540 KB",
+                stickers: "18",
+                trending: true
+            }
+        ];
+
+        // Configuración de la publicidad - MODIFICA ESTO
+        const adConfig = {
+            image: "https://via.placeholder.com/80x80/ffffff/ff6b6b?text=AD",
+            title: "¡Oferta Especial!",
+            description: "Descubre nuestra increíble promoción por tiempo limitado. No te lo pierdas.",
+            buttonText: "Ver Más",
+            link: "https://tupagina.com"
+        };
+
+        // Función para descargar packs
+        function downloadStickerPack(packUrl, packName) {
+            // Descargar el archivo .zip
+            const link = document.createElement('a');
+            link.href = packUrl;
+            link.download = packName + '.zip';
+            link.click();
+            
+            // Mostrar instrucciones
+            showInstructions();
+        }
+
+        function showInstructions() {
+            alert('📱 Cómo agregar a WhatsApp:\n\n1. Descarga la app "Sticker Maker"\n2. Abre el archivo .zip descargado\n3. Toca "Add to WhatsApp"\n4. ¡Listo! Los stickers se agregarán automáticamente');
+        }
+
+        // Función para mostrar los paquetes CON PUBLICIDAD
+        function displayStickerPacks(packs = stickerPacks) {
+            const container = document.getElementById('stickerGrid');
+            container.innerHTML = '';
+
+            if (packs.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search fa-3x" style="margin-bottom: 20px; color: #cbd5e0;"></i>
+                        <h3>No se encontraron packs</h3>
+                        <p>Intenta con otros términos de búsqueda</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Mostrar el primer pack
+            if (packs.length > 0) {
+                const firstPack = packs[0];
+                const packElement = `
+                    <div class="sticker-pack" data-category="${firstPack.category}">
+                        <div class="pack-header">
+                            <span class="pack-badge">${firstPack.stickers} stickers</span>
+                            ${firstPack.trending ? '<span style="color: #e53e3e;"><i class="fas fa-fire"></i> Trending</span>' : ''}
+                        </div>
+                        <img src="${firstPack.preview}" alt="${firstPack.name}" class="sticker-preview">
+                        <h3>${firstPack.name}</h3>
+                        <p class="pack-author">Por: ${firstPack.author}</p>
+                        <div class="pack-stats">
+                            <div class="stat">
+                                <i class="fas fa-download"></i>
+                                <div>${firstPack.fileSize}</div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <div>4.8</div>
+                            </div>
+                        </div>
+                        <button class="whatsapp-btn" onclick="downloadStickerPack('${firstPack.downloadLink}', '${firstPack.name}')">
+                            <i class="fab fa-whatsapp"></i>
+                            Descargar Pack
+                        </button>
+                    </div>
+                `;
+                container.innerHTML += packElement;
+            }
+
+            // Agregar PUBLICIDAD después del primer pack
+            const adElement = `
+                <div class="ad-banner">
+                    <img src="${adConfig.image}" alt="Publicidad" class="ad-image">
+                    <div class="ad-content">
+                        <div class="ad-title">${adConfig.title}</div>
+                        <div class="ad-description">${adConfig.description}</div>
+                    </div>
+                    <a href="${adConfig.link}" target="_blank" class="ad-button">
+                        ${adConfig.buttonText}
+                    </a>
+                </div>
+            `;
+            container.innerHTML += adElement;
+
+            // Mostrar el resto de los packs (empezando desde el segundo)
+            for (let i = 1; i < packs.length; i++) {
+                const pack = packs[i];
+                const packElement = `
+                    <div class="sticker-pack" data-category="${pack.category}">
+                        <div class="pack-header">
+                            <span class="pack-badge">${pack.stickers} stickers</span>
+                            ${pack.trending ? '<span style="color: #e53e3e;"><i class="fas fa-fire"></i> Trending</span>' : ''}
+                        </div>
+                        <img src="${pack.preview}" alt="${pack.name}" class="sticker-preview">
+                        <h3>${pack.name}</h3>
+                        <p class="pack-author">Por: ${pack.author}</p>
+                        <div class="pack-stats">
+                            <div class="stat">
+                                <i class="fas fa-download"></i>
+                                <div>${pack.fileSize}</div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <div>4.8</div>
+                            </div>
+                        </div>
+                        <button class="whatsapp-btn" onclick="downloadStickerPack('${pack.downloadLink}', '${pack.name}')">
+                            <i class="fab fa-whatsapp"></i>
+                            Descargar Pack
+                        </button>
+                    </div>
+                `;
+                container.innerHTML += packElement;
+            }
+        }
+
+        // Funcionalidad de búsqueda
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredPacks = stickerPacks.filter(pack => 
+                pack.name.toLowerCase().includes(searchTerm) ||
+                pack.author.toLowerCase().includes(searchTerm) ||
+                pack.category.toLowerCase().includes(searchTerm)
+            );
+            displayStickerPacks(filteredPacks);
+        });
+
+        // Funcionalidad de categorías
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remover active de todos los botones
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                // Agregar active al botón clickeado
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                if (category === 'all') {
+                    displayStickerPacks();
+                } else {
+                    const filteredPacks = stickerPacks.filter(pack => pack.category === category);
+                    displayStickerPacks(filteredPacks);
+                }
+            });
+        });
+
+        // Mostrar los paquetes cuando cargue la página
+        displayStickerPacks();
+    </script>
+</body>
+</html>
