@@ -10,14 +10,13 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3VBH1231DD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3VBH1231DD');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VBH1231DD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3VBH1231DD');
+    </script>
     <style>
         * {
             margin: 0;
@@ -179,7 +178,7 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* Advertisement Banner - Más discreto */
+        /* Advertisement Banner - Mejorado para responsividad */
         .ad-banner {
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             border-radius: 10px;
@@ -191,6 +190,8 @@
             color: white;
             grid-column: 1 / -1;
             margin: 20px 0;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .ad-image {
@@ -203,18 +204,26 @@
 
         .ad-content {
             flex: 1;
+            min-width: 0; /* Permite que el texto se ajuste correctamente */
         }
 
         .ad-title {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .ad-description {
             font-size: 0.85rem;
             opacity: 0.9;
             margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .ad-button {
@@ -229,6 +238,8 @@
             text-decoration: none;
             display: inline-block;
             font-size: 0.85rem;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .ad-button:hover {
@@ -277,6 +288,7 @@
             font-size: 0.9rem;
         }
 
+        /* Media Queries Mejoradas */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -295,6 +307,16 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 12px;
+                padding: 15px;
+            }
+            
+            .ad-image {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .ad-title, .ad-description {
+                text-align: center;
             }
             
             .categories {
@@ -304,6 +326,61 @@
             .category-btn {
                 padding: 8px 14px;
                 font-size: 0.85rem;
+            }
+        }
+        
+        /* Nuevo breakpoint para pantallas grandes */
+        @media (min-width: 1200px) {
+            .sticker-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .ad-banner {
+                padding: 15px 25px;
+            }
+        }
+        
+        /* Para pantallas medianas */
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .sticker-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .ad-banner {
+                padding: 15px 20px;
+            }
+        }
+        
+        /* Para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .header p {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .sticker-pack {
+                padding: 15px;
+            }
+            
+            .sticker-preview {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .ad-banner {
+                padding: 12px;
             }
         }
     </style>
@@ -448,13 +525,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
