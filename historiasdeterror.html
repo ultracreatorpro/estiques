@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias de Terror | Relatos escalofriantes y cuentos de miedo</title>
+    <meta name="description" content="Colección de las mejores historias de terror, relatos escalofriantes y cuentos de miedo. Envía tu propia historia de terror para compartir con nuestra comunidad.">
+    <meta name="keywords" content="historias de terror, relatos de miedo, cuentos escalofriantes, terror, miedo, paranormal, leyendas urbanas">
+    <meta name="author" content="Historias de Terror">
+    
+    <!-- Favicon e iconos -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/ghost.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/color/96/000000/ghost.png">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Historias de Terror | Relatos escalofriantes">
+    <meta property="og:description" content="Colección de las mejores historias de terror y relatos escalofriantes">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:url" content="https://www.tusitio.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Estilos CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        /* Cabecera */
+        header {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=500&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #8b0000;
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px #8b0000);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px #8b0000;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Sección de videos */
+        .videos-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8b0000;
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+        }
+        
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 1100px) {
+            .videos-container {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .videos-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .video-item {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4);
+        }
+        
+        .video-iframe {
+            width: 100%;
+            height: 270px;
+            border: none;
+            display: block;
+        }
+        
+        .video-title {
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            background-color: #222;
+        }
+        
+        /* Formulario para enviar historias */
+        .submit-story {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            margin-top: 30px;
+        }
+        
+        .submit-story h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+        }
+        
+        .submit-story p {
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #8b0000;
+        }
+        
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #a00000;
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Popunder de confirmación */
+        .popunder {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popunder-content {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 2px solid #8b0000;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+            animation: popup 0.5s ease;
+        }
+        
+        @keyframes popup {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .popunder h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .popunder p {
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .popunder-btn {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        /* Responsividad */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .videos-container {
+                gap: 20px;
+            }
+            
+            .video-iframe {
+                height: 220px;
+            }
+            
+            .submit-story {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .video-iframe {
+                height: 200px;
+            }
+            
+            .videos-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera con logo y título -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://img.icons8.com/color/96/000000/ghost.png" alt="Logo Historias de Terror" class="logo">
+                <h1>Historias de Terror</h1>
+            </div>
+            <p class="tagline">Sumérgete en los relatos más escalofriantes y comparte tus propias experiencias paranormales. Aquí habitan las historias que te quitarán el sueño.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Sección de videos de YouTube -->
+        <section class="videos-section">
+            <h2 class="section-title">Relatos de Terror en Video</h2>
+            <div class="videos-container">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">La Leyenda de la Casa Abandonada</div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">El Espectro del Bosque Negro</div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Mi Experiencia en el Hotel Embrujado</div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">La Niña de la Curva Maldita</div>
+                </div>
+                
+                <!-- Video 5 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">El Diario del Antiguo Propietario</div>
+                </div>
+                
+                <!-- Video 6 -->
+                <div class="video-item">
+                    <iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Voces en el Desván</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Formulario para enviar historias (simulación) -->
+        <section class="submit-story">
+            <h2>Comparte Tu Historia de Terror</h2>
+            <p>¿Tienes una experiencia paranormal o historia de terror que quieras compartir? Envíala y podría aparecer en nuestro próximo video. <strong>Nota:</strong> Este formulario es una simulación, no se enviará realmente tu historia.</p>
+            
+            <form id="story-form">
+                <div class="form-group">
+                    <label for="name">Tu Nombre (opcional):</label>
+                    <input type="text" id="name" name="name" placeholder="Ej: María González">
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Título de tu historia:</label>
+                    <input type="text" id="title" name="title" placeholder="Ej: La sombra en mi habitación" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="story">Tu historia de terror:</label>
+                    <textarea id="story" name="story" placeholder="Describe tu experiencia de terror aquí..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar Historia</button>
+            </form>
+        </section>
+    </div>
+    
+    <!-- Popunder de confirmación -->
+    <div class="popunder" id="popunder">
+        <div class="popunder-content">
+            <h3>¡Historia Enviada!</h3>
+            <p>Gracias por compartir tu historia de terror con nosotros. Hemos recibido tu envío correctamente.</p>
+            <p><strong>Recuerda:</strong> Este es solo un formulario de simulación, tu historia no se ha enviado realmente.</p>
+            <button class="popunder-btn" id="close-popunder">Cerrar</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="container">
+        <p>© 2023 Historias de Terror. Todos los derechos reservados. | Diseñado con ❤️ para los amantes del terror</p>
+        <p>Este sitio es solo para fines de entretenimiento. Las historias pueden ser ficticias o basadas en experiencias reales.</p>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Manejo del formulario y popunder
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('story-form');
+            const popunder = document.getElementById('popunder');
+            const closeBtn = document.getElementById('close-popunder');
+            
+            // Manejar el envío del formulario
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Mostrar el popunder
+                popunder.style.display = 'flex';
+                
+                // Reiniciar el formulario
+                form.reset();
+                
+                // Desplazar hacia arriba para ver el popunder
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Cerrar el popunder
+            closeBtn.addEventListener('click', function() {
+                popunder.style.display = 'none';
+            });
+            
+            // Cerrar el popunder al hacer clic fuera
+            popunder.addEventListener('click', function(e) {
+                if (e.target === popunder) {
+                    popunder.style.display = 'none';
+                }
+            });
+            
+            // Cerrar el popunder con la tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    popunder.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
